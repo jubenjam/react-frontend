@@ -1,6 +1,7 @@
 import { useState } from "react";
 import EditPopup from "./EditPopup.js";
 import CheckForm from "./CheckForm";
+import "./Table.css";
 
 function TableHeader() {
   return (
