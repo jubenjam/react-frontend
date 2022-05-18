@@ -41,6 +41,11 @@ function TableBody(props) {
 
   var rows = props.characterData.map((row, index) => {
     var date = new Date(row.date.replace(/-/g, "/").replace(/T.+/, ""));
+    var completeClass = "none";
+    if (row.completed) {
+      completeClass = "completed";
+    }
+
     return (
       <tr key={index}>
         <td>
@@ -52,7 +57,7 @@ function TableBody(props) {
             />
           }
         </td>
-        <td>{row.task}</td>
+        <td className={completeClass}>{row.task}</td>
         <td>{date.toDateString()}</td>
         <td>{row.category}</td>
         <td>
